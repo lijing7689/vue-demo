@@ -9,7 +9,28 @@ volume(w,h)
  width:w;
  height:h;
 
+volume-line(w,h,line)
+ width:w;
+ height:h;
+ line-height:line;
+
+fonts(size,weight,colors)
+  font-size:size;
+  font-weight:weight;
+  color:colors;
+
 background-bg(isurl,position,size)
  background:url(isurl) no-repeat center 0px;
  background-position: position;
  background-size: size; 
+
+more-text-hidden(num)
+ display:-webkit-box;
+ -webkit-box-orient: vertical;
+ overflow: hidden;
+ text-overflow:ellipsis;
+ -webkit-line-clamp:num;
+
+test(color)
+ border:1px solid color;
+ 
