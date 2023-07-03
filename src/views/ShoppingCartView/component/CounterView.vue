@@ -1,13 +1,40 @@
 <script setup lang='ts'>
-import { ref } from 'vue'
-let count = ref<number>(1)
+import { ref,defineProps,defineEmits, watch } from 'vue'
+let count = ref<number>(0)
+const props = defineProps({
+    countItem:{
+        type:Object,
+        default:{}
+    }
+})
+watch(()=> props.countItem,()=>{
+    count.value = props.countItem.count
+},{
+    immediate:true
+})
+// 多个emit
+// const emits = defineEmits(['countPlus','countMinus'])
+// emits('countPlus',{
+//     // data:
+// })
+// 单个emit
+const emit = defineEmits<{
+    (event:'countPlus',val:object):void
+}>()
+
+
+
+const handerPlus = () => {
+    count.value ++
+    emit('countPlus',{...props.countItem})
+}
 </script>
 <template>
     <div class="counter">
         <div class="main-content">
             <div class="minus">-</div>
             <div class="count">{{ count }}</div>
-            <div class="plus">+</div>
+            <div class="plus"  @click="handerPlus">+</div>
          </div>
     </div>
 </template>

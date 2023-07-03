@@ -7,7 +7,10 @@ const props=defineProps({
         default:[] || null
     }
 })
-
+const getCountPlus = (count:object)=>{
+    console.log(count);
+    
+}
 </script>
 <!-- div中文会自动换行，英文不会，使用word-break断句 -->
 <template>
@@ -24,7 +27,7 @@ const props=defineProps({
                 <div class="good-sum">
                     <div class="good-price">{{ item.price }}</div>
                     <div class="good-count">
-                        <CounterView></CounterView>
+                        <CounterView :countItem="item" @countPlus="getCountPlus"></CounterView>
                     </div>
                 </div>
             </div>

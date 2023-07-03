@@ -10,9 +10,9 @@
         count:number
     }
     let arrList = ref<listType[]>(
-        [{name:'1111111',price:198,count:1},
+        [{name:'1111111',price:198,count:2},
         {name:'1111111',price:198,count:1},
-        {name:'1111111',price:198,count:1},
+        {name:'1111111',price:198,count:2},
         {name:'1111111',price:198,count:1},
         {name:'1111111',price:198,count:1},
         {name:'1111111',price:198,count:1},
